@@ -6,11 +6,15 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:02:36 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/25 18:28:06 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:44:20 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.h"
+#include "Ice.h"
+#include "Cure.h"
+#include "IMateriaSource.h"
+#include "ICharacter.h"
 
 int main(void)
 {
