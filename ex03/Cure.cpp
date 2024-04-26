@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:33:56 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/25 18:39:15 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:46:39 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 //constructeur par default
 Cure::Cure()
+: AMateria("cure (default)")
 {
 	std::cout << "Cure - Default Constructor" << std::endl;
 }
 
 //constructeur par type
 Cure::Cure(const std::string& type)
+: AMateria(type)
 {
 	std::cout << "Cure - Constructor with Type" << std::endl;
 }
@@ -34,13 +36,13 @@ Cure::Cure(const Cure& copy)
 //destructeur
 Cure::~Cure()
 {
-	std::cout << "Cure - Destructor" < std::endl;
+	std::cout << "Cure - Destructor" << std::endl;
 }
 
 //operateur d'affection
-Cure&	Cure::operator=(const Cure& copy);
+Cure&	Cure::operator=(const Cure& copy)
 {
-	std::cout << "Cure - Opertor" < std::endl;
+	std::cout << "Cure - Opertor" << std::endl;
 	if (this != &copy)
 	{
 		_type = copy._type;
@@ -48,12 +50,12 @@ Cure&	Cure::operator=(const Cure& copy);
 	return (*this);
 }
 
-std::string const &getType() const
+Cure* Cure::clone() const
 {
-	return (this->_type);
+	return (new Cure(*this));
 }
 
 void Cure::use(ICharacter& target)
 {
-	std::cout << "* heals " << _type << "'s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

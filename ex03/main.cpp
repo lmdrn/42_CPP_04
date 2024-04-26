@@ -6,15 +6,17 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:02:36 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/25 18:44:20 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:25:57 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.h"
-#include "Ice.h"
-#include "Cure.h"
-#include "IMateriaSource.h"
-#include "ICharacter.h"
+#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
 int main(void)
 {

@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:09:53 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/25 18:13:34 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:45:17 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 #include <iostream>
 #include "AMateria.hpp"
 
-class Ice : public Ice
+//declaration anticipee
+class ICharacter;
+
+class Ice : public AMateria
 {
 	public:
 		//constructeur par default
@@ -30,11 +33,9 @@ class Ice : public Ice
 		~Ice();
 		//operateur d'affection
 		Ice&	operator=(const Ice& copy);
-		//getters
-		std::string const &getType() const;
 		//methods
 		//methode virtual pure
-		virtual	Ice* clone() const = 0;
+		virtual	Ice* clone() const;
 		virtual void use(ICharacter& target);
 };
 

@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:39:28 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/25 18:40:57 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:46:52 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 //constructeur par default
 Ice::Ice()
+: AMateria("ice (default)")
 {
 	std::cout << "Ice - Default Constructor" << std::endl;
 }
 
 //constructeur par type
 Ice::Ice(const std::string& type)
+: AMateria(type)
 {
 	std::cout << "Ice - Constructor with Type" << std::endl;
 }
@@ -34,13 +36,13 @@ Ice::Ice(const Ice& copy)
 //destructeur
 Ice::~Ice()
 {
-	std::cout << "Ice - Destructor" < std::endl;
+	std::cout << "Ice - Destructor" << std::endl;
 }
 
 //operateur d'affection
-Ice&	Ice::operator=(const Ice& copy);
+Ice&	Ice::operator=(const Ice& copy)
 {
-	std::cout << "Ice - Operator" < std::endl;
+	std::cout << "Ice - Operator" << std::endl;
 	if (this != &copy)
 	{
 		_type = copy._type;
@@ -48,12 +50,12 @@ Ice&	Ice::operator=(const Ice& copy);
 	return (*this);
 }
 
-std::string const &getType() const
+Ice* Ice::clone() const
 {
-	return (this->_type);
+	return (new Ice(*this));
 }
 
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << _type << " *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

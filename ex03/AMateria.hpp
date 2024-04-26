@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:03:33 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/25 18:08:20 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:45:55 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,16 @@
 
 # define AMATERIA_HPP
 
+#include <iostream>
+#include "ICharacter.hpp"
+
+//declaration anticipee
+class ICharacter;
+
 class AMateria
 {
 	protected:
-		int	_type;
+		std::string		_type;
 	public:
 		//constructeur par default
 		AMateria();
@@ -26,15 +32,15 @@ class AMateria
 		//constrcuteur par copie
 		AMateria(const AMateria& copy);
 		//destructeur
-		~AMateria();
+		virtual ~AMateria();
 		//operateur d'affection
-		AMateria&	operator=(const AMateria& copy);
+		AMateria&		operator=(const AMateria& copy);
 		//getters
 		std::string const &getType() const;
 		//methods
 		//methode virtual pure
-		virtual	AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		virtual	AMateria*	clone() const = 0;
+		virtual void		use(ICharacter& target);
 
 
 };

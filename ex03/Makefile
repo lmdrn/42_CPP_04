@@ -6,7 +6,7 @@
 #    By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/25 15:36:40 by lmedrano          #+#    #+#              #
-#    Updated: 2024/04/25 18:01:57 by lmedrano         ###   ########.fr        #
+#    Updated: 2024/04/26 14:47:08 by lmedrano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ ORANGE 		= \033[38;5;215m
 GREEN 		= \033[38;5;82m
 RESET 		= \033[0m
 
-SRCS 		= main.cpp
+SRCS 		= AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 
 OBJS 		= ${SRCS:.c=.o}
 
