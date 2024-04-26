@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:39:28 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/26 14:46:52 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:20:47 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Ice::Ice()
 Ice::Ice(const std::string& type)
 : AMateria(type)
 {
-	std::cout << "Ice - Constructor with Type" << std::endl;
+	std::cout << "Ice - Constructor with Type " << _type << std::endl;
 }
 
 //constrcuteur par copie

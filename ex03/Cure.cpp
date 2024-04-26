@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:33:56 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/26 14:46:39 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:20:59 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cure::Cure()
 Cure::Cure(const std::string& type)
 : AMateria(type)
 {
-	std::cout << "Cure - Constructor with Type" << std::endl;
+	std::cout << "Cure - Constructor with Type" << _type << std::endl;
 }
 
 //constrcuteur par copie

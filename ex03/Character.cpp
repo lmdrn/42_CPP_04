@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:52:34 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/26 14:35:29 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:20:20 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Character::Character()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		_inventory[i] = nullptr;
+		_inventory[i] = NULL;
 	}
 	std::cout << "Character - Default Constructor : " << _name << std::endl;
 }
@@ -29,17 +29,23 @@ Character::Character(const std::string& name)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		_inventory[i] = nullptr;
+		_inventory[i] = NULL;
 	}
 	std::cout << "Character - Constructor with name : " << _name << std::endl;
 }
 
 //constrcuteur par copie
 Character::Character(const Character& copy)
-: _name(copy._name)
 {
 	std::cout << "Character - Copy Constructor : " << copy.getName() << std::endl;
-	*this = copy;
+	for (int i = 0; i < 4; i++)
+	{
+		if (!(copy._inventory)[i])
+			_inventory[i] = NULL;
+		else
+			_inventory[i] = (copy._inventory)[i]->clone();
+	}
+	_name = copy._name;
 }
 
 //destructeur
@@ -47,16 +53,23 @@ Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 	{
+		if (_inventory[i])
 		delete _inventory[i];
+		_inventory[i] = NULL;
 	}
 }
 
 //operateur d'affection
 Character&	Character::operator=(const Character& copy)
 {
-	if (this != &copy)
+	for (int i = 0; i < 4; i++)
 	{
-		_name = copy._name;
+		if (_inventory[i])
+			delete _inventory[i];
+		if (!(copy._inventory)[i])
+			_inventory[i] = NULL;
+		else
+			_inventory[i] = (copy._inventory)[i]->clone();
 	}
 	return (*this);
 }
@@ -71,9 +84,9 @@ void Character::equip(AMateria *m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (_inventory[i] == nullptr)
+		if (_inventory[i] == NULL)
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			return ;
 		}
 	}
@@ -81,15 +94,15 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int index)
 {
-	if (index >= 0 && index < 4 && _inventory[index] != nullptr)
+	if (index >= 0 && index < 4 && _inventory[index] != NULL)
 	{
-		_inventory[index] = nullptr;
+		_inventory[index] = NULL;
 	}
 }
 
 void Character::use(int index, ICharacter &target)
 {
-	if (index >= 0 && index < 4 && _inventory[index] != nullptr)
+	if (index >= 0 && index < 4 && _inventory[index] != NULL)
 	{
 		_inventory[index]->use(target);
 	}

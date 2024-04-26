@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:29:52 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/26 14:53:22 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:21:07 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ AMateria::AMateria()
 AMateria::AMateria(const std::string& type)
 : _type(type)
 {
-	std::cout << "AMateria Constructor avec Type" << _type << std::endl;
+	std::cout << "AMateria Constructor avec Type " << _type << std::endl;
 }
 
 //constrcuteur par copie
@@ -37,7 +37,7 @@ AMateria::AMateria(const AMateria& copy)
 //destructeur
 AMateria::~AMateria()
 {
-	std::cout << "AMateria Default Constructor" << std::endl;
+	std::cout << "AMateria Default Destructor" << std::endl;
 }
 
 //operateur d'affection
