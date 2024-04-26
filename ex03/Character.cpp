@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:52:34 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/26 15:20:20 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:41:37 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void Character::unequip(int index)
 	{
 		_inventory[index] = NULL;
 	}
+		std::cout << _name << " is unequipped" << std::endl;
 }
 
 void Character::use(int index, ICharacter &target)
@@ -105,5 +106,6 @@ void Character::use(int index, ICharacter &target)
 	if (index >= 0 && index < 4 && _inventory[index] != NULL)
 	{
 		_inventory[index]->use(target);
+		std::cout << _name << " has used materia " << &target << std::endl;
 	}
 }
