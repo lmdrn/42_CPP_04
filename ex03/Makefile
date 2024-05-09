@@ -6,7 +6,7 @@
 #    By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 16:19:44 by lmedrano          #+#    #+#              #
-#    Updated: 2024/05/09 18:12:09 by lmedrano         ###   ########.fr        #
+#    Updated: 2024/05/09 18:19:02 by lmedrano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CC 			= c++
 
 CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
-CFLAGS		+= -fsanitize=thread -g3 
+#CFLAGS		+= -fsanitize=thread -g3 
 
 RM		= rm -rf
 
