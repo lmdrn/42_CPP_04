@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 10:46:49 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 15:58:30 by lmedrano         ###   ########.fr       */
+/*   Created: 2024/05/09 11:53:12 by lmedrano          #+#    #+#             */
+/*   Updated: 2024/05/09 11:54:33 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
+#ifndef WRONGCAT_HPP
 
-# define ANIMAL_HPP
-
-#include <iostream>
+# define WRONGCAT_HPP
 
 #define RESET "\x1b[0m"
 #define GREEN "\x1b[32m"
@@ -22,26 +20,24 @@
 #define RED "\x1b[31m"
 #define PURPLE "\x1b[35m"
 
-class Animal
+#include <iostream>
+#include "WrongAnimal.hpp"
+
+class WrongCat : virtual public WrongAnimal
 {
-	protected:
-		std::string _type;
 	public:
 		//constructeur par default
-		Animal();
+		WrongCat();
 		//constructeur par name
-		Animal(const std::string& type);
+		WrongCat(const std::string& type);
 		//constructeur par copie
-		Animal(const Animal& copy);
+		WrongCat(const WrongCat& copy);
 		//destructeur
-		virtual ~Animal(void);
+		virtual ~WrongCat(void);
 		//operateur d'affection
-		Animal& 	operator=(const Animal& copy);
+		WrongCat& 	operator=(const WrongCat& copy);
 		//methods
-		virtual void 	makeSound(void) const;
-		//getter
-		std::string	getType(void) const;
-
+		void 		makeSound(void) const;
 };
 
 #endif

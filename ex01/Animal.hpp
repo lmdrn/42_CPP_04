@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 10:46:49 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 15:58:30 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:31:32 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ class Animal
 		Animal& 	operator=(const Animal& copy);
 		//methods
 		virtual void 	makeSound(void) const;
+		virtual void 	printIdeas(void) const;
 		//getter
 		std::string	getType(void) const;
 

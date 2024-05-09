@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 10:46:49 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 15:58:30 by lmedrano         ###   ########.fr       */
+/*   Created: 2024/05/09 11:47:59 by lmedrano          #+#    #+#             */
+/*   Updated: 2024/05/09 12:04:10 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
 
-# define ANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 
@@ -22,26 +22,25 @@
 #define RED "\x1b[31m"
 #define PURPLE "\x1b[35m"
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		std::string _type;
 	public:
 		//constructeur par default
-		Animal();
+		WrongAnimal();
 		//constructeur par name
-		Animal(const std::string& type);
+		WrongAnimal(const std::string& type);
 		//constructeur par copie
-		Animal(const Animal& copy);
+		WrongAnimal(const WrongAnimal& copy);
 		//destructeur
-		virtual ~Animal(void);
+		virtual ~WrongAnimal(void);
 		//operateur d'affection
-		Animal& 	operator=(const Animal& copy);
+		WrongAnimal& 	operator=(const WrongAnimal& copy);
 		//methods
-		virtual void 	makeSound(void) const;
+		void 		makeSound(void) const;
 		//getter
 		std::string	getType(void) const;
-
 };
 
 #endif

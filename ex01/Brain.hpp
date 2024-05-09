@@ -1,47 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 10:46:49 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 15:58:30 by lmedrano         ###   ########.fr       */
+/*   Created: 2024/05/09 12:09:42 by lmedrano          #+#    #+#             */
+/*   Updated: 2024/05/09 15:31:51 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
+#ifndef BRAIN_HPP
 
-# define ANIMAL_HPP
+# define BRAIN_HPP
 
 #include <iostream>
 
-#define RESET "\x1b[0m"
-#define GREEN "\x1b[32m"
-#define ORANGE "\x1b[38;5;208m"
-#define RED "\x1b[31m"
-#define PURPLE "\x1b[35m"
-
-class Animal
+class Brain
 {
-	protected:
-		std::string _type;
+	private:
+		std::string	_ideas[100];
 	public:
 		//constructeur par default
-		Animal();
-		//constructeur par name
-		Animal(const std::string& type);
+		Brain();
 		//constructeur par copie
-		Animal(const Animal& copy);
+		Brain(const Brain& copy);
 		//destructeur
-		virtual ~Animal(void);
+		~Brain(void);
 		//operateur d'affection
-		Animal& 	operator=(const Animal& copy);
-		//methods
-		virtual void 	makeSound(void) const;
-		//getter
-		std::string	getType(void) const;
-
+		Brain& 	operator=(const Brain& copy);
+		//getters
+		std::string	getIdeas(int index) const;
 };
-
 #endif

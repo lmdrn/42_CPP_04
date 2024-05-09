@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 10:53:03 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 15:58:31 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:34:29 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ void Animal::makeSound(void) const
 {
 	std::cout << "ANIMAL : " << GREEN << _type << " is making a sound" << RESET << std::endl;
 }
+
+void Animal::printIdeas(void) const
+{
+	std::cout << "ANIMAL : " << GREEN << _type << " with no ideas" << RESET << std::endl;
+}
+
 //getters
 std::string	Animal::getType(void) const
 {

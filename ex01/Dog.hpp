@@ -1,47 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 10:46:49 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 15:58:30 by lmedrano         ###   ########.fr       */
+/*   Created: 2024/05/09 11:33:49 by lmedrano          #+#    #+#             */
+/*   Updated: 2024/05/09 15:30:36 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
+#ifndef DOG_HPP
 
-# define ANIMAL_HPP
+# define DOG_HPP
 
+#include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
+//colors
 #define RESET "\x1b[0m"
 #define GREEN "\x1b[32m"
 #define ORANGE "\x1b[38;5;208m"
 #define RED "\x1b[31m"
 #define PURPLE "\x1b[35m"
 
-class Animal
+class Dog : virtual public Animal
 {
-	protected:
-		std::string _type;
+	private:
+		Brain *_brain;
 	public:
 		//constructeur par default
-		Animal();
+		Dog();
 		//constructeur par name
-		Animal(const std::string& type);
+		Dog(const std::string& type);
 		//constructeur par copie
-		Animal(const Animal& copy);
+		Dog(const Dog& copy);
 		//destructeur
-		virtual ~Animal(void);
+		virtual ~Dog(void);
 		//operateur d'affection
-		Animal& 	operator=(const Animal& copy);
+		Dog& 	operator=(const Dog& copy);
 		//methods
-		virtual void 	makeSound(void) const;
-		//getter
-		std::string	getType(void) const;
-
+		virtual void	makeSound(void) const;
+		virtual void	printIdeas(void) const;
 };
 
 #endif
