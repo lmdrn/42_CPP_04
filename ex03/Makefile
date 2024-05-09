@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/09 10:48:23 by lmedrano          #+#    #+#              #
-#    Updated: 2024/05/09 16:20:54 by lmedrano         ###   ########.fr        #
+#    Created: 2024/05/09 16:19:44 by lmedrano          #+#    #+#              #
+#    Updated: 2024/05/09 18:12:09 by lmedrano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,18 +15,17 @@ ORANGE 		= \033[38;5;215m
 GREEN 		= \033[38;5;82m
 RESET 		= \033[0m
 
-SRCS 		= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp \
-		  Brain.cpp
+SRCS 		= main.cpp Ice.cpp Cure.cpp Amateria.cpp Character.cpp MateriaSource.cpp 
 
 OBJS 		= ${SRCS:.c=.o}
 
-NAME		= brainz
+NAME		= hell
 
 CC 			= c++
 
 CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
-#CFLAGS		+= -fsanitize=thread -g3 
+CFLAGS		+= -fsanitize=thread -g3 
 
 RM		= rm -rf
 
