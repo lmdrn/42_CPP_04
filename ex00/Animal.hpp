@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 16:17:45 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/24 18:26:22 by lmedrano         ###   ########.fr       */
+/*   Created: 2024/05/09 10:46:49 by lmedrano          #+#    #+#             */
+/*   Updated: 2024/05/09 11:12:11 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 
-#define ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
 
@@ -22,10 +22,10 @@
 #define RED "\x1b[31m"
 #define PURPLE "\x1b[35m"
 
-class	Animal
+class Animal
 {
 	protected:
-		std::string	_type;
+		std::string _type;
 	public:
 		//constructeur par default
 		Animal();
@@ -38,8 +38,10 @@ class	Animal
 		//operateur d'affection
 		Animal& 	operator=(const Animal& copy);
 		//methods
-		virtual void	makeSound(void) const;
+		virtual void 	makeSound(void) const;
+		//getter
 		std::string	getType(void) const;
+
 };
 
 #endif

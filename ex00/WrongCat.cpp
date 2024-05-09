@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   by: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   created: 2024/04/24 16:25:41 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/24 18:36:36 by lmedrano         ###   ########.fr       */
+/*   Created: 2024/05/09 11:55:20 by lmedrano          #+#    #+#             */
+/*   Updated: 2024/05/09 12:02:40 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,36 @@
 
 //constructeur par default
 WrongCat::WrongCat()
-: WrongAnimal("Minette")
+: WrongAnimal("Default WrongCat")
 {
-	std::cout << "alohaaaa! " << GREEN << _type << RESET << " has been created by default" << std::endl;
+	std::cout << "WRONG CAT : " << ORANGE << _type << RESET << " Default constructor called" << std::endl;
 }
 
 //constructeur par name
 WrongCat::WrongCat(const std::string& type)
 : WrongAnimal(type)
 {
-	std::cout << "alohaaaa! " <<  GREEN << _type << RESET << " has been created with type" << std::endl;
+	std::cout << "WRONG CAT : " << ORANGE << _type << RESET << " Constructor with name initialized called" << std::endl;
 }
 
 //constructeur par copie
 WrongCat::WrongCat(const WrongCat& copy)
 : WrongAnimal(copy.getType())
 {
-	std::cout << "alohaaaa!x2 " << ORANGE << copy.getType() << RESET << " has been created by copy" << std::endl;
+	std::cout << "WRONG CAT : " << ORANGE << copy.getType() << RESET << " Copy constructor called" << std::endl;
 	*this = copy;
+}
+
+//destructeur
+WrongCat::~WrongCat(void)
+{
+	std::cout << "WRONG CAT : " << ORANGE << _type << RESET << " Destructor called" << std::endl;
 }
 
 //operateur d'affection
 WrongCat& 	WrongCat::operator=(const WrongCat& copy)
 {
-	std::cout << "alohaaaa!x3 " << ORANGE << _type << RESET << " has been created by operator" << std::endl;
+	std::cout << "WRONG CAT : " << ORANGE << copy.getType() << RESET << "Operator d'affection called" << std::endl;
 	if (this != &copy)
 	{
 		_type = copy._type;
@@ -45,20 +51,8 @@ WrongCat& 	WrongCat::operator=(const WrongCat& copy)
 	return (*this);
 }
 
-//destructeur
-WrongCat::~WrongCat(void)
-{
-	std::cout << "auf wiedersehen! " << RED << _type << RESET << "has been destroyed" << std::endl;
-}
-
 //methods
-void	WrongCat::makeSound(void) const
+void 	WrongCat::makeSound(void) const
 {
-	std::cout << _type << " makes the sound : " << PURPLE << "Miaow je suis un faux chat" << RESET << std::endl;
+	std::cout << "WRONG CAT : " << ORANGE << _type << " says : COCORICOOOOO ?!" << RESET << std::endl;
 }
-
-std::string	WrongCat::getType(void) const
-{
-	return (this->_type);
-}
-

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 17:23:31 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/04/24 18:36:55 by lmedrano         ###   ########.fr       */
+/*   Created: 2024/05/09 11:17:54 by lmedrano          #+#    #+#             */
+/*   Updated: 2024/05/09 11:28:07 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,36 @@
 
 //constructeur par default
 Cat::Cat()
-: Animal("Jean-Edouard")
+: Animal("Default Cat")
 {
-	std::cout << "Miaaaaow! " << GREEN << _type << RESET << " is born by DEFAULT" << std::endl;
+	std::cout << "CAT : " << ORANGE << _type << RESET << " Default constructor called" << std::endl;
 }
 
 //constructeur par name
 Cat::Cat(const std::string& type)
 : Animal(type)
 {
-	std::cout << "Miaaaaaowx2! " <<  GREEN << _type << RESET << " is born with type" << std::endl;
+	std::cout << "CAT : " << ORANGE << _type << RESET << " Constructor with name initialized called" << std::endl;
 }
 
 //constructeur par copie
 Cat::Cat(const Cat& copy)
 : Animal(copy.getType())
 {
-	std::cout << "Miaaaaaowx3! " <<  GREEN << copy.getType() << RESET << " is born by COPY" << std::endl;
+	std::cout << "CAT : " << ORANGE << copy.getType() << RESET << " Copy constructor called" << std::endl;
 	*this = copy;
+}
+
+//destructeur
+Cat::~Cat(void)
+{
+	std::cout << "CAT : " << ORANGE << _type << RESET << " Destructor called" << std::endl;
 }
 
 //operateur d'affection
 Cat& 	Cat::operator=(const Cat& copy)
 {
-	std::cout << "Miaaaaaowx4! " <<  GREEN << _type << RESET << " is born by OPERATOR" << std::endl;
+	std::cout << "CAT : " << ORANGE << copy.getType() << RESET << "Operator d'affection called" << std::endl;
 	if (this != &copy)
 	{
 		_type = copy._type;
@@ -45,14 +51,8 @@ Cat& 	Cat::operator=(const Cat& copy)
 	return (*this);
 }
 
-//destructeur
-Cat::~Cat(void)
-{
-	std::cout << "Goodbyyyye! " << RED << _type << RESET << " is dead :(" << std::endl;
-}
-
 //methods
-void	Cat::makeSound(void) const
+void 	Cat::makeSound(void) const
 {
-	std::cout << _type << " makes the sound : " << PURPLE << " miaaaaaaaaaaow" << RESET << std::endl;
+	std::cout << "CAT : " << ORANGE << _type << " says : MeeeeOoOOOOOoow" << RESET << std::endl;
 }
