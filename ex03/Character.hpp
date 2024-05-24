@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:48:12 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 18:06:25 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/24 12:05:00 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Character : public ICharacter
 		//Constructeur par default
 		Character();
 		//Constructeur avec nom
-		Character(const std::string& name);
+		Character(const std::string name);
 		//Constructeur par copie
 		Character(const Character& copy);
 		// Operator d'affection
@@ -33,10 +33,10 @@ class Character : public ICharacter
 		//destructor
 		virtual ~Character();
 		//methods
-		const std::string &getName() const;
-		void equip(AMateria *m);
-		void unequip(int index);
-		void use (int index, ICharacter &target);
+		virtual const std::string &getName() const;
+		virtual void equip(AMateria *m);
+		virtual void unequip(int index);
+		virtual void use (int index, ICharacter &target);
 };
 
 #endif

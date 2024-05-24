@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:38:09 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 18:04:30 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/24 15:09:02 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 //constructeur par default
 Cure::Cure()
-: AMateria("Default Materia")
+: AMateria("cure")
 {
 	std::cout << PURPLE << "Cure : Default constructeur called" << RESET << std::endl;
-}
-//constructeur par type
-Cure::Cure(const std::string& type)
-: AMateria(type)
-{
-	std::cout << PURPLE << "Cure : Type constructeur called" << RESET << std::endl;
 }
 //constructeur par copie
 Cure::Cure(const Cure& copy)
@@ -47,12 +41,12 @@ Cure::~Cure()
 }
 
 //method virtual pure
-Cure* Cure::clone() const
+AMateria* Cure::clone() const
 {
 	return (new Cure(*this));
 }
 //method
 void Cure::use(ICharacter& target)
 {
-	std::cout << "Cure : * heals " << PURPLE<< target.getName() << RESET << "'s wounds *" << std::endl;
+	std::cout << "Cure : * heals " << PURPLE << target.getName() << RESET << "'s wounds *" << std::endl;
 }

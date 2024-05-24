@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:34:00 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 16:43:30 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/24 15:15:13 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "AMateria.hpp"
 
 //declaration anticpee
-class Icharacter;
+class ICharacter;
 
 #define RESET "\x1b[0m"
 #define GREEN "\x1b[32m"
@@ -31,8 +31,6 @@ class Cure : virtual public AMateria
 	public:
 		//constructeur par default
 		Cure();
-		//constructeur par type
-		Cure(const std::string& type);
 		//constructeur par copie
 		Cure(const Cure& copy);
 		//operateur d'affection
@@ -40,7 +38,7 @@ class Cure : virtual public AMateria
 		//destructeur
 		virtual ~Cure();
 		//method virtual pure
-		virtual Cure* clone() const;
+		virtual AMateria* clone() const;
 		//method
 		virtual void use(ICharacter& target);
 };

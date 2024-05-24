@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:45:43 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 18:04:04 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/24 15:16:05 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,11 @@
 
 //constructeur par default
 Ice::Ice()
-: AMateria("Default Materia")
+: AMateria("ice")
 {
 	std::cout << ORANGE << "Ice : Default constructeur called" << RESET << std::endl;
 }
-//constructeur par type
-Ice::Ice(const std::string& type)
-: AMateria(type)
-{
-	std::cout << ORANGE << "Ice : Type constructeur called" << RESET << std::endl;
-}
+
 //constructeur par copie
 Ice::Ice(const Ice& copy)
 {
@@ -47,12 +42,12 @@ Ice::~Ice()
 }
 
 //method virtual pure
-Ice* Ice::clone() const
+AMateria* Ice::clone() const
 {
 	return (new Ice(*this));
 }
 //method
 void Ice::use(ICharacter& target)
 {
-	std::cout << "Ice : * shoots an ice bolt at " << ORANGE<< target.getName() << RESET << " *" << std::endl;
+	std::cout << "Ice : * shoots an ice bolt at " << ORANGE << target.getName() << RESET << " *" << std::endl;
 }

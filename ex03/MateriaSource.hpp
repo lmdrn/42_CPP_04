@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:44:54 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/09 18:09:29 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:30:29 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria*	_materias[4];
+		AMateria	*knownMaterias[4];
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource& copy);
 		MateriaSource&	operator=(const MateriaSource& copy);
 		virtual ~MateriaSource();
-		void learnMateria(AMateria*);
+		void learnMateria(AMateria* m);
 		AMateria* createMateria(const std::string &type);
 };
 
